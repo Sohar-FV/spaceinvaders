@@ -1,7 +1,7 @@
 # spaceinvaders
 
 - [Semaine n°1 : du 30 mars au 5 avril](#semaine1)  
-- [Semaine n°2 : du 6 au 12 avril](#semaine1)  
+- [Semaine n°2 : du 6 au 12 avril](#semaine2)  
 - [Glossaire](#glossaire)
 
 -------------
@@ -61,7 +61,7 @@ Aucune
 
 ### Sprints et fonctionnalités réalisées 
 
-#### Fonctionnalité n°2 : Dimensionner le vaisseau
+#### Fonctionnalité n°2 : Dimensionner le vaisseau (fini)
 
 - Story n°1 : Pouvor dimmensionner le vaisseau  
 Un vaisseau possédant une longueur et une hauteur données est créé.
