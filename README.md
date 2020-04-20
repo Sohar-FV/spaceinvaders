@@ -2,6 +2,7 @@
 
 - [Semaine n°1 : du 30 mars au 5 avril](#semaine1)  
 - [Semaine n°2 : du 6 au 12 avril](#semaine2)  
+- [Semaine n°3 : du 13 au 19 avril](#semaine2)  
 - [Glossaire](#glossaire)
 
 -------------
@@ -97,6 +98,59 @@ Aucune
 
 
 ![Nuage de mots de la semaine 2](Rapports/ImagesS2/WordCloudS2.png)
+
+
+
+### Difficultés rencontrées 
+Aucune
+
+### Remarques diverses
+
+Aucune
+
+-------------
+
+## Semaine n°3 : du 13 au 19 avril <a id="semaine3"></a>
+
+
+### Sprints et fonctionnalités réalisées 
+
+#### Spike : Prise en main et intégration d'un moteur graphique
+
+- Importation du moteur graphique.    
+- Tests du moteur graphique sur un projet dédié.  
+- Adaptation du moteur graphique au projet Space Invaders.  
+
+#### Fonctionnalité n°3 :Choisir la vitesse du vaisseau (fini)
+
+- Story n°1 : Ajouter une vitesse au vaisseau de manière non-regressive  
+Désormais, un vaisseau aura une vitesse qui caractérise la distance qu'il parcourt sur un temps donné. On ajoute cet attribut en maintenant le bon déroulement des tests précédents.
+ 
+- Story n°2 : Régler la vitesse du vaisseau  
+La vitesse d'un vaisseau est paramétrable lors de la création de celui-ci : à travers son constructeur. Pour le moment il n'est pas possible de modifier la vitesse du vaisseau après sa création.
+
+- Story n°3 : Faire en sorte que le déplacement se fasse correctement pour une vitesse quelconque
+Le vaisseau se déplace, soit vers la gauche, soit vers la droite. Il parcourt à chaque déplacement une distance égale à sa vitesse
+
+- Story n°4 : Adapter le moteur graphique à la notion de vitesse 
+Le vaisseau se déplace dans l'application graphique à une vitesse préalablement déterminée. Avec quelques essais sur l'application graphique on détermine une vitesse "idéale" pour un jeu Space Invaders.
+
+
+### Fonctionnalité en cours d'implémentation 
+
+Aucune
+
+### Diagramme de classes 
+
+
+![Diagrammes de classes de la semaine 3](Rapports/ImagesS3/ClassDiagramS3.png)
+
+
+
+### Nuage de mots 
+
+
+![Nuage de mots de la semaine 3](Rapports/ImagesS3/WordCloudS3.png)
 
 
 
