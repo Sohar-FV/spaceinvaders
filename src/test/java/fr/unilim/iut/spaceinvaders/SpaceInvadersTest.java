@@ -1,6 +1,9 @@
 package fr.unilim.iut.spaceinvaders;
 
-    import fr.unilim.iut.spaceinvaders.utils.DebordementEspaceJeuException;
+    import fr.unilim.iut.spaceinvaders.model.Dimension;
+import fr.unilim.iut.spaceinvaders.model.Position;
+import fr.unilim.iut.spaceinvaders.model.SpaceInvaders;
+import fr.unilim.iut.spaceinvaders.utils.DebordementEspaceJeuException;
 import fr.unilim.iut.spaceinvaders.utils.HorsEspaceJeuException;
 import fr.unilim.iut.spaceinvaders.utils.MissileException;
 
@@ -308,5 +311,22 @@ import static org.junit.Assert.assertEquals;
 	        ".....VVVVVVV...\n" + 
 	        ".....VVVVVVV...\n" , spaceinvaders.recupererEspaceJeuDansChaineASCII());
 	    }
+	    
+	    @Test
+	    public void test_PositionnerUnNouvelEnvahisseur() {
+	    	spaceinvaders.positionnerUnNouvelEnvahisseur(new Dimension(3,2),new Position(6,2), 1);
+	    	
+	    	assertEquals("" + 
+	    			"...............\n" + 
+	    			"......EEE......\n" +
+	    			"......EEE......\n" + 
+	    			"...............\n" + 
+	    			"...............\n" + 
+	    			"...............\n" + 
+	    			"...............\n" + 
+	    			"...............\n" + 
+	    			"...............\n" + 
+	    			"...............\n" , spaceinvaders.recupererEspaceJeuDansChaineASCII());
+	    		}
 	   
     }
