@@ -196,7 +196,7 @@ public class SpaceInvaders implements Jeu {
 	
 	public void deplacerEnvahisseurVersLaDroite() {
 		if (envahisseur.abscisseLaPlusADroite() < (longueur - 1)) {
-			envahisseur.deplacerHorizontalementVers(Direction.DROITE);;
+			envahisseur.deplacerHorizontalementVers(Direction.DROITE);
 			if (!estDansEspaceJeu(envahisseur.abscisseLaPlusADroite(), envahisseur.ordonneeLaPlusHaute())) {
 				envahisseur.positionner(longueur - envahisseur.longueur(), envahisseur.ordonneeLaPlusHaute());
 			}
@@ -242,6 +242,13 @@ public class SpaceInvaders implements Jeu {
     	 deplacerEnvahisseurVersLaGauche();
     	 if (!(estDansEspaceJeu(envahisseur.abscisseLaPlusAGauche()-1, envahisseur.ordonneeLaPlusHaute()))) {
     		 envahisseur.setDirectionGauche(false);}
+     	 }
+     
+     if (this.aUnEnvahisseur() && !envahisseur.getDirectionGauche()) {
+    	 
+    	 deplacerEnvahisseurVersLaDroite();
+    	 if (!(estDansEspaceJeu(envahisseur.abscisseLaPlusADroite()+1, envahisseur.ordonneeLaPlusHaute()))) {
+    		 envahisseur.setDirectionGauche(true);}
      	 }
 	 }
      
