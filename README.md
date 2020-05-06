@@ -2,7 +2,8 @@
 
 - [Semaine n°1 : du 30 mars au 5 avril](#semaine1)  
 - [Semaine n°2 : du 6 au 12 avril](#semaine2)  
-- [Semaine n°3 : du 13 au 19 avril](#semaine2)  
+- [Semaine n°3 : du 13 au 19 avril](#semaine3)  
+- [Semaine n°4 : du 27 avril au 3 mai](#semaine4)  
 - [Glossaire](#glossaire)
 
 -------------
@@ -163,6 +164,55 @@ Aucune
 
 -------------
 
+## Semaine n°4 : du 27 avril au 3 mai <a id="semaine4"></a>
+
+
+### Sprints et fonctionnalités réalisées 
+
+#### Fonctionnalité n°4 : tirer un missile depuis le vaisseau (fini)
+
+- Story n°1 : Définir ce qu'est un missile : création de la superclasse "Sprite" pour gérer le comportement du missile et du vaisseau
+ 
+- Story n°2 : Tirer un missile
+Lorsqu'on tire un missile, on crée et on positionne un nouveau missile devant le vaisseau, au centre de celui-ci. On s'assure que les dimensions du missile sont cohérente avec celles du vaisseau : pas plus grandes que lui.
+
+- Story n°3 : Faire déplacer le missile à la verticale de manière autonome
+Une fois tiré le missile doit se déplacer automatiquement vers le haut de l'écran à une vitesse donnée
+
+- Story n°4 : Le Missile doit disparaître du jeu lors qu'il atteint le haut de l'espace jeu
+Une fois que le missile est au moins partiellement sorti de l'écran, il doit disparaitre afin de permettre d'en tirer un nouveau
+
+#### Spike : Prise en main et intégration d'un moteur graphique
+
+- Adaptation du moteur graphique à la nouvelle fonctionnalité
+
+### Fonctionnalité en cours d'implémentation 
+
+Aucune
+
+### Diagramme de classes 
+
+
+![Diagrammes de classes de la semaine 4](Rapports/ImagesS4/ClassDiagramS4.png)
+
+
+
+### Nuage de mots 
+
+
+![Nuage de mots de la semaine 4](Rapports/ImagesS4/WordCloudS4.png)
+
+
+
+### Difficultés rencontrées 
+Aucune
+
+### Remarques diverses
+
+Aucune
+
+-------------
+
 
 ## Glossaire <a id="glossaire"></a>
 
@@ -175,5 +225,7 @@ Aucune
 * **Dimension** : caractéristique du vaisseau qui défini sa taille en 2D grâce à une longueur et une hauteur.
 
 * **Position** : caractéristique du vaisseau qui défini sa position en 2D grâce à une abscisse et une ordonnée.
+
+* **Sprite** : un élément graphique qui peut se déplacer sur l'écran. Par exemple : un vaisseau ou un missile sont des sprites.
 
 ------------- 
