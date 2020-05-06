@@ -181,6 +181,14 @@ public class SpaceInvaders implements Jeu {
 		}
 		
 	}
+	
+	public void deplacerEnvahisseurVersLaGauche() {
+		if (0 < envahisseur.abscisseLaPlusAGauche())
+			envahisseur.deplacerHorizontalementVers(Direction.GAUCHE);
+		if (!estDansEspaceJeu(envahisseur.abscisseLaPlusAGauche(), envahisseur.ordonneeLaPlusHaute())) {
+			envahisseur.positionner(0, envahisseur.ordonneeLaPlusHaute());
+		}
+	}
 
 
 	
@@ -217,5 +225,7 @@ public class SpaceInvaders implements Jeu {
   public boolean etreFini() {
 		 return false; 
   }
+
+	
 
 }

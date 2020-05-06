@@ -313,6 +313,24 @@ import static org.junit.Assert.assertEquals;
 	    }
 	    
 	    @Test
+	    public void test_PositionnerUnNouvelEnvahisseur() {
+	    	
+	    	spaceinvaders.positionnerUnNouveauSprite(new Dimension(3,2),new Position(6,2), 1, "Envahisseur");
+	    	
+	    	assertEquals("" + 
+	    	"...............\n" + 
+	    	"......EEE......\n" +
+	    	"......EEE......\n" + 
+	    	"...............\n" + 
+	    	"...............\n" + 
+	    	"...............\n" + 
+	    	"...............\n" + 
+	    	"...............\n" + 
+	    	"...............\n" + 
+	        "...............\n" , spaceinvaders.recupererEspaceJeuDansChaineASCII());
+	    }
+	    
+	    @Test
 	    public void test_PositionnerUnNouvelEnvahisseur_et_UnVaisseau() {
 	    	spaceinvaders.positionnerUnNouveauSprite(new Dimension(6,2),new Position(5,9), 1, "Vaisseau");
 	    	spaceinvaders.positionnerUnNouveauSprite(new Dimension(3,2),new Position(6,2), 1, "Envahisseur");
@@ -328,6 +346,25 @@ import static org.junit.Assert.assertEquals;
 	    	"...............\n" + 
 	    	".....VVVVVV....\n" + 
 	        ".....VVVVVV....\n" , spaceinvaders.recupererEspaceJeuDansChaineASCII());
+	    }
+	    
+	    @Test
+	    public void test_DéplacerUnEnvahisseurVersLaGauche() {
+	    	
+	    	spaceinvaders.positionnerUnNouveauSprite(new Dimension(3,2),new Position(6,2), 1, "Envahisseur");
+	    	spaceinvaders.deplacerEnvahisseurVersLaGauche();
+	    	
+	    	assertEquals("" + 
+	    	"...............\n" + 
+	    	".....EEE.......\n" +
+	    	".....EEE.......\n" + 
+	    	"...............\n" + 
+	    	"...............\n" + 
+	    	"...............\n" + 
+	    	"...............\n" + 
+	    	"...............\n" + 
+	    	"...............\n" + 
+	        "...............\n" , spaceinvaders.recupererEspaceJeuDansChaineASCII());
 	    }
 	   
     }
