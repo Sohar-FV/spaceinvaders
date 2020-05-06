@@ -122,6 +122,30 @@ public class SpaceInvaders implements Jeu {
 		envahisseur = new Envahisseur(dimension,position,vitesse);
 			
 	}
+	
+	public void positionnerUnNouveauSprite(Dimension dimension, Position position, int vitesse, String type) {
+		int x = position.abscisse();
+		int y = position.ordonnee();
+		
+		if (!estDansEspaceJeu(x, y))
+			throw new HorsEspaceJeuException("La position du sprite est en dehors de l'espace jeu");
+
+		int longueurSprite = dimension.longueur();
+		int hauteurSprite = dimension.hauteur();
+		
+		if (!estDansEspaceJeu(x + longueurSprite - 1, y))
+			throw new DebordementEspaceJeuException("Le sprite déborde de l'espace jeu vers la droite à cause de sa longueur");
+		if (!estDansEspaceJeu(x, y - hauteurSprite + 1))
+			throw new DebordementEspaceJeuException("Le sprite déborde de l'espace jeu vers le bas à cause de sa hauteur");
+
+		if (type.equals("Envahisseur"))
+				envahisseur = new Envahisseur(dimension,position,vitesse);
+		if (type.equals("Vaisseau"))
+				vaisseau = new Vaisseau(dimension,position,vitesse);
+			
+	}
+	
+	
 
 	
 	//Gestion des déplacements et actions
