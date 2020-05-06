@@ -366,5 +366,26 @@ import static org.junit.Assert.assertEquals;
 	    	"...............\n" + 
 	        "...............\n" , spaceinvaders.recupererEspaceJeuDansChaineASCII());
 	    }
+	    
+	    @Test
+	    public void test_DéplacerUnEnvahisseurVersLeBordGauche_AvecArretAvantDeLeDepasser() {
+	    	
+	    	spaceinvaders.positionnerUnNouveauSprite(new Dimension(3,2),new Position(1,2), 10, "Envahisseur");
+	    	spaceinvaders.deplacerEnvahisseurVersLaGauche();
+	    	
+	    	assertEquals("" + 
+	    	"...............\n" + 
+	    	"EEE............\n" +
+	    	"EEE............\n" + 
+	    	"...............\n" + 
+	    	"...............\n" + 
+	    	"...............\n" + 
+	    	"...............\n" + 
+	    	"...............\n" + 
+	    	"...............\n" + 
+	        "...............\n" , spaceinvaders.recupererEspaceJeuDansChaineASCII());
+	    }
+	    
+	    	    
 	   
     }

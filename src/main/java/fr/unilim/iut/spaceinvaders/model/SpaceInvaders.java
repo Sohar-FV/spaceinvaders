@@ -55,6 +55,11 @@ public class SpaceInvaders implements Jeu {
 		return this.missile;
 	}
 	
+	public Envahisseur recupererEnvahisseur() {
+		return this.envahisseur;
+	}
+
+	
 	//Gestion des positions
 
 	private boolean aUnMissileQuiOccupeLaPosition(int x, int y) {
@@ -77,7 +82,7 @@ public class SpaceInvaders implements Jeu {
 		return this.aUnEnvahisseur() && envahisseur.occupeLaPosition(x, y);
 	}
 
-	private boolean aUnEnvahisseur() {
+	public boolean aUnEnvahisseur() {
 		return envahisseur != null;
 	}
 
@@ -85,8 +90,7 @@ public class SpaceInvaders implements Jeu {
 		return ((x >= 0) && (x < longueur)) && ((y >= 0) && (y < hauteur));
 	}
 	
-	 public void positionnerUnNouveauVaisseau(Dimension dimension, Position position, int vitesse) {
-			
+/*			
 			int x = position.abscisse();
 			int y = position.ordonnee();
 			
@@ -121,7 +125,7 @@ public class SpaceInvaders implements Jeu {
 
 		envahisseur = new Envahisseur(dimension,position,vitesse);
 			
-	}
+	}*/
 	
 	public void positionnerUnNouveauSprite(Dimension dimension, Position position, int vitesse, String type) {
 		int x = position.abscisse();
@@ -189,15 +193,29 @@ public class SpaceInvaders implements Jeu {
 			envahisseur.positionner(0, envahisseur.ordonneeLaPlusHaute());
 		}
 	}
-
-
+	
+	public void deplacerEnvahisseurVersLaDroite() {
+		if (envahisseur.abscisseLaPlusADroite() < (longueur - 1)) {
+			envahisseur.deplacerHorizontalementVers(Direction.DROITE);;
+			if (!estDansEspaceJeu(envahisseur.abscisseLaPlusADroite(), envahisseur.ordonneeLaPlusHaute())) {
+				envahisseur.positionner(longueur - envahisseur.longueur(), envahisseur.ordonneeLaPlusHaute());
+			}
+		}
+	}
+	
+	
+	
 	
 	//Gestion du jeu et du moteur graphique
 	
 	 public void initialiserJeu() {
 			Position positionVaisseau = new Position(this.longueur/2,this.hauteur-1);
 			Dimension dimensionVaisseau = new Dimension(Constante.VAISSEAU_LONGUEUR, Constante.VAISSEAU_HAUTEUR);
-			positionnerUnNouveauVaisseau(dimensionVaisseau, positionVaisseau, Constante.VAISSEAU_VITESSE);
+			positionnerUnNouveauSprite(dimensionVaisseau, positionVaisseau, Constante.VAISSEAU_VITESSE, "Vaisseau");
+			Position positionEnvahisseur = new Position(this.longueur/2,this.hauteur-80);
+			Dimension dimensionEnvahisseur = new Dimension(Constante.ENVAHISSEUR_LONGUEUR, Constante.ENVAHISSEUR_HAUTEUR);
+			positionnerUnNouveauSprite(dimensionEnvahisseur, positionEnvahisseur, Constante.ENVAHISSEUR_VITESSE, "Envahisseur");
+			
 		 }
 	
 	 @Override
@@ -218,14 +236,26 @@ public class SpaceInvaders implements Jeu {
      if (this.aUnMissile()) {
          deplacerMissile();
 	   }
-
+     
+     if (this.aUnEnvahisseur() && envahisseur.getDirectionGauche()) {
+    	 
+    	 deplacerEnvahisseurVersLaGauche();
+    	 if (!(estDansEspaceJeu(envahisseur.abscisseLaPlusAGauche()-1, envahisseur.ordonneeLaPlusHaute()))) {
+    		 envahisseur.setDirectionGauche(false);}
+     	 }
 	 }
+     
 
-	 @Override
+	 
+
+	 
+
+	@Override
   public boolean etreFini() {
 		 return false; 
   }
 
+	
 	
 
 }
