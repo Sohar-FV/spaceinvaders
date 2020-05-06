@@ -173,13 +173,13 @@ Aucune
 
 - Story n°1 : Définir ce qu'est un missile : création de la superclasse "Sprite" pour gérer le comportement du missile et du vaisseau
  
-- Story n°2 : Tirer un missile
+- Story n°2 : Tirer un missile  
 Lorsqu'on tire un missile, on crée et on positionne un nouveau missile devant le vaisseau, au centre de celui-ci. On s'assure que les dimensions du missile sont cohérente avec celles du vaisseau : pas plus grandes que lui.
 
-- Story n°3 : Faire déplacer le missile à la verticale de manière autonome
+- Story n°3 : Faire déplacer le missile à la verticale de manière autonome  
 Une fois tiré le missile doit se déplacer automatiquement vers le haut de l'écran à une vitesse donnée
 
-- Story n°4 : Le Missile doit disparaître du jeu lors qu'il atteint le haut de l'espace jeu
+- Story n°4 : Le Missile doit disparaître du jeu lors qu'il atteint le haut de l'espace jeu  
 Une fois que le missile est au moins partiellement sorti de l'écran, il doit disparaitre afin de permettre d'en tirer un nouveau
 
 #### Spike : Prise en main et intégration d'un moteur graphique
