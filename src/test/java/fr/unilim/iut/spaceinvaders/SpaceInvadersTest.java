@@ -130,7 +130,7 @@ import static org.junit.Assert.assertEquals;
 	    public void test_VaisseauAvance_DeplacerVaisseauVersLaDroite() {
 
 	        spaceinvaders.positionnerUnNouveauSprite(new Dimension(3,2),new Position(7,9),3, "Vaisseau");
-	        spaceinvaders.deplacerVaisseauVersLaDroite();
+	        spaceinvaders.deplacerSpriteVersLaDroite(spaceinvaders.recupererVaisseau());
 	        assertEquals("" + 
 	        "...............\n" + 
 	        "...............\n" +
@@ -149,7 +149,7 @@ import static org.junit.Assert.assertEquals;
 		public void test_VaisseauImmobile_DeplacerVaisseauVersLaDroite() {
 			
 	    	spaceinvaders.positionnerUnNouveauSprite(new Dimension(3,2),new Position(12,9), 3, "Vaisseau");
-			spaceinvaders.deplacerVaisseauVersLaDroite();
+			spaceinvaders.deplacerSpriteVersLaDroite(spaceinvaders.recupererVaisseau());
 			assertEquals("" + 
 			"...............\n" + 
 			"...............\n" +
@@ -168,7 +168,7 @@ import static org.junit.Assert.assertEquals;
 	    public void test_VaisseauAvancePartiellement_DeplacerVaisseauVersLaDroite() {
 
 	       spaceinvaders.positionnerUnNouveauSprite(new Dimension(3,2),new Position(10,9),3, "Vaisseau");
-	       spaceinvaders.deplacerVaisseauVersLaDroite();
+	       spaceinvaders.deplacerSpriteVersLaDroite(spaceinvaders.recupererVaisseau());
 	       assertEquals("" + 
 	       "...............\n" + 
 	       "...............\n" +
@@ -186,7 +186,7 @@ import static org.junit.Assert.assertEquals;
 	    public void test_VaisseauAvance_DeplacerVaisseauVersLaGauche() {
 
 	       spaceinvaders.positionnerUnNouveauSprite(new Dimension(3,2),new Position(7,9), 3, "Vaisseau");
-	       spaceinvaders.deplacerVaisseauVersLaGauche();
+	       spaceinvaders.deplacerSpriteVersLaGauche(spaceinvaders.recupererVaisseau());
 
 	       assertEquals("" + 
 	       "...............\n" + 
@@ -205,7 +205,7 @@ import static org.junit.Assert.assertEquals;
 		public void test_VaisseauImmobile_DeplacerVaisseauVersLaGauche() {
 			
 	    	spaceinvaders.positionnerUnNouveauSprite(new Dimension(3,2),new Position(0,9), 3, "Vaisseau");
-			spaceinvaders.deplacerVaisseauVersLaGauche();
+			spaceinvaders.deplacerSpriteVersLaGauche(spaceinvaders.recupererVaisseau());
 			
 			assertEquals("" + 
 			"...............\n" + 
@@ -225,7 +225,7 @@ import static org.junit.Assert.assertEquals;
 	    public void test_VaisseauAvancePartiellement_DeplacerVaisseauVersLaGauche() {
 
 	       spaceinvaders.positionnerUnNouveauSprite(new Dimension(3,2),new Position(1,9), 3, "Vaisseau");
-	       spaceinvaders.deplacerVaisseauVersLaGauche();
+	       spaceinvaders.deplacerSpriteVersLaGauche(spaceinvaders.recupererVaisseau());
 
 	       assertEquals("" + 
 	       "...............\n" + 
@@ -354,7 +354,7 @@ import static org.junit.Assert.assertEquals;
 	    public void test_DéplacerUnEnvahisseurVersLaGauche() {
 	    	
 	    	spaceinvaders.positionnerUnNouveauSprite(new Dimension(3,2),new Position(6,2), 1, "Envahisseur");
-	    	spaceinvaders.deplacerEnvahisseurVersLaGauche();
+	    	spaceinvaders.deplacerSpriteVersLaGauche(spaceinvaders.recupererEnvahisseur());
 	    	
 	    	assertEquals("" + 
 	    	"...............\n" + 
@@ -373,7 +373,7 @@ import static org.junit.Assert.assertEquals;
 	    public void test_DéplacerUnEnvahisseurVersLeBordGauche_AvecArretAvantDeLeDepasser() {
 	    	
 	    	spaceinvaders.positionnerUnNouveauSprite(new Dimension(3,2),new Position(6,2), 10, "Envahisseur");
-	    	spaceinvaders.deplacerEnvahisseurVersLaGauche();
+	    	spaceinvaders.deplacerSpriteVersLaGauche(spaceinvaders.recupererEnvahisseur());
 	    	
 	    	assertEquals("" + 
 	    	"...............\n" + 
@@ -392,7 +392,7 @@ import static org.junit.Assert.assertEquals;
 	    public void test_DéplacerUnEnvahisseurVersLaDroite() {
 	    	
 	    	spaceinvaders.positionnerUnNouveauSprite(new Dimension(3,2),new Position(6,2), 1, "Envahisseur");
-	    	spaceinvaders.deplacerEnvahisseurVersLaDroite();
+	    	spaceinvaders.deplacerSpriteVersLaDroite(spaceinvaders.recupererEnvahisseur());
 	    	
 	    	assertEquals("" + 
 	    	"...............\n" + 
@@ -411,7 +411,7 @@ import static org.junit.Assert.assertEquals;
 	    public void test_DéplacerUnEnvahisseurVersLeBordDroite_AvecArretAvantDeLeDepasser() {
 	    	
 	    	spaceinvaders.positionnerUnNouveauSprite(new Dimension(3,2),new Position(6,2), 10, "Envahisseur");
-	    	spaceinvaders.deplacerEnvahisseurVersLaDroite();
+	    	spaceinvaders.deplacerSpriteVersLaDroite(spaceinvaders.recupererEnvahisseur());
 	    	
 	    	assertEquals("" + 
 	    	"...............\n" + 
@@ -424,6 +424,28 @@ import static org.junit.Assert.assertEquals;
 	    	"...............\n" + 
 	    	"...............\n" + 
 	        "...............\n" , spaceinvaders.recupererEspaceJeuDansChaineASCII());
+	    }
+	    
+	    // Fonctionnalité
+	    
+	    //Le test suivant a uniquement vocation a vérifier le fonctionnement des positions et dimensions dans l'espace de jeu
+	    @Test
+	    public void test_verificationPositionsDimensions() {
+	    	
+	    	spaceinvaders.positionnerUnNouveauSprite(new Dimension(3,3),new Position(0,2), 10, "Envahisseur");
+	    	spaceinvaders.positionnerUnNouveauSprite(new Dimension(3,2),new Position(0,9), 10, "Vaisseau");
+	    	
+	    	assertEquals("" + 
+	    	"EEE............\n" + 
+	    	"EEE............\n" +
+	    	"EEE............\n" + 
+	    	"...............\n" + 
+	    	"...............\n" + 
+	    	"...............\n" + 
+	    	"...............\n" + 
+	    	"...............\n" + 
+	    	"VVV............\n" + 
+	        "VVV............\n" , spaceinvaders.recupererEspaceJeuDansChaineASCII());
 	    }
 	    	    
 	   

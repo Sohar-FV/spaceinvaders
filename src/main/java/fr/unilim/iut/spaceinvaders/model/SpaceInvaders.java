@@ -90,42 +90,7 @@ public class SpaceInvaders implements Jeu {
 		return ((x >= 0) && (x < longueur)) && ((y >= 0) && (y < hauteur));
 	}
 	
-/*			
-			int x = position.abscisse();
-			int y = position.ordonnee();
-			
-			if (!estDansEspaceJeu(x, y))
-				throw new HorsEspaceJeuException("La position du vaisseau est en dehors de l'espace jeu");
 
-			int longueurVaisseau = dimension.longueur();
-			int hauteurVaisseau = dimension.hauteur();
-			
-			if (!estDansEspaceJeu(x + longueurVaisseau - 1, y))
-				throw new DebordementEspaceJeuException("Le vaisseau déborde de l'espace jeu vers la droite à cause de sa longueur");
-			if (!estDansEspaceJeu(x, y - hauteurVaisseau + 1))
-				throw new DebordementEspaceJeuException("Le vaisseau déborde de l'espace jeu vers le bas à cause de sa hauteur");
-
-			vaisseau = new Vaisseau(dimension,position,vitesse);
-	}
-	 
-	public void positionnerUnNouvelEnvahisseur(Dimension dimension, Position position, int vitesse) {
-		int x = position.abscisse();
-		int y = position.ordonnee();
-		
-		if (!estDansEspaceJeu(x, y))
-			throw new HorsEspaceJeuException("La position de l'envahisseur est en dehors de l'espace jeu");
-
-		int longueurEnvahisseur = dimension.longueur();
-		int hauteurEnvahisseur = dimension.hauteur();
-		
-		if (!estDansEspaceJeu(x + longueurEnvahisseur - 1, y))
-			throw new DebordementEspaceJeuException("Le vaisseau déborde de l'espace jeu vers la droite à cause de sa longueur");
-		if (!estDansEspaceJeu(x, y - hauteurEnvahisseur + 1))
-			throw new DebordementEspaceJeuException("Le vaisseau déborde de l'espace jeu vers le bas à cause de sa hauteur");
-
-		envahisseur = new Envahisseur(dimension,position,vitesse);
-			
-	}*/
 	
 	public void positionnerUnNouveauSprite(Dimension dimension, Position position, int vitesse, String type) {
 		int x = position.abscisse();
@@ -153,20 +118,20 @@ public class SpaceInvaders implements Jeu {
 
 	
 	//Gestion des déplacements et actions
-	public void deplacerVaisseauVersLaDroite() {
-		if (vaisseau.abscisseLaPlusADroite() < (longueur - 1)) {
-			vaisseau.deplacerHorizontalementVers(Direction.DROITE);;
-			if (!estDansEspaceJeu(vaisseau.abscisseLaPlusADroite(), vaisseau.ordonneeLaPlusHaute())) {
-				vaisseau.positionner(longueur - vaisseau.longueur(), vaisseau.ordonneeLaPlusHaute());
+	public void deplacerSpriteVersLaDroite(Sprite sprite) {
+		if (sprite.abscisseLaPlusADroite() < (longueur - 1)) {
+			sprite.deplacerHorizontalementVers(Direction.DROITE);;
+			if (!estDansEspaceJeu(sprite.abscisseLaPlusADroite(), sprite.ordonneeLaPlusHaute())) {
+				sprite.positionner(longueur - sprite.longueur(), sprite.ordonneeLaPlusHaute());
 			}
 		}
 	}
 
-	public void deplacerVaisseauVersLaGauche() {
-		if (0 < vaisseau.abscisseLaPlusAGauche())
-			vaisseau.deplacerHorizontalementVers(Direction.GAUCHE);
-		if (!estDansEspaceJeu(vaisseau.abscisseLaPlusAGauche(), vaisseau.ordonneeLaPlusHaute())) {
-			vaisseau.positionner(0, vaisseau.ordonneeLaPlusHaute());
+	public void deplacerSpriteVersLaGauche(Sprite sprite) {
+		if (0 < sprite.abscisseLaPlusAGauche())
+			sprite.deplacerHorizontalementVers(Direction.GAUCHE);
+		if (!estDansEspaceJeu(sprite.abscisseLaPlusAGauche(), sprite.ordonneeLaPlusHaute())) {
+			sprite.positionner(0, sprite.ordonneeLaPlusHaute());
 		}
 	}
 	
@@ -185,7 +150,7 @@ public class SpaceInvaders implements Jeu {
 		}
 		
 	}
-	
+	/*
 	public void deplacerEnvahisseurVersLaGauche() {
 		if (0 < envahisseur.abscisseLaPlusAGauche())
 			envahisseur.deplacerHorizontalementVers(Direction.GAUCHE);
@@ -202,7 +167,7 @@ public class SpaceInvaders implements Jeu {
 			}
 		}
 	}
-	
+	*/
 	
 	
 	
@@ -222,11 +187,11 @@ public class SpaceInvaders implements Jeu {
 	 public void evoluer(Commande commandeUser) {
 		
      if (commandeUser.gauche) {
-         deplacerVaisseauVersLaGauche();
+         deplacerSpriteVersLaGauche(vaisseau);
      }
 		
      if (commandeUser.droite) {
-     	deplacerVaisseauVersLaDroite();
+     	deplacerSpriteVersLaDroite(vaisseau);
      }
      
      if (commandeUser.tir && !this.aUnMissile()) {
@@ -239,14 +204,14 @@ public class SpaceInvaders implements Jeu {
      
      if (this.aUnEnvahisseur() && envahisseur.getDirectionGauche()) {
     	 
-    	 deplacerEnvahisseurVersLaGauche();
+    	 deplacerSpriteVersLaGauche(envahisseur);
     	 if (!(estDansEspaceJeu(envahisseur.abscisseLaPlusAGauche()-1, envahisseur.ordonneeLaPlusHaute()))) {
     		 envahisseur.setDirectionGauche(false);}
      	 }
      
      if (this.aUnEnvahisseur() && !envahisseur.getDirectionGauche()) {
     	 
-    	 deplacerEnvahisseurVersLaDroite();
+    	 deplacerSpriteVersLaDroite(envahisseur);
     	 if (!(estDansEspaceJeu(envahisseur.abscisseLaPlusADroite()+1, envahisseur.ordonneeLaPlusHaute()))) {
     		 envahisseur.setDirectionGauche(true);}
      	 }
