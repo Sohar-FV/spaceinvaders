@@ -4,6 +4,7 @@
 - [Semaine n°2 : du 6 au 12 avril](#semaine2)  
 - [Semaine n°3 : du 13 au 19 avril](#semaine3)  
 - [Semaine n°4 : du 27 avril au 3 mai](#semaine4)  
+- [Semaine n°5 : du 4 au 10 mai](#semaine5) 
 - [Glossaire](#glossaire)
 
 -------------
@@ -213,6 +214,60 @@ Aucune
 
 -------------
 
+## Semaine n°5 : du 4 au 10 mai <a id="semaine5"></a>
+
+
+### Sprints et fonctionnalités réalisées 
+
+#### Fonctionnalité n°5 : Ajouter un envahisseur dans le jeu (fini)
+
+- Story n°1 : Positionner un envahisseur  
+Un nouvel envahisseur est créé
+L'envahisseur est positionné aux coordonnées transmises. Contraintes :
+La position souhaitée est transmise par ses coordonnées x et y.  
+Les dimensions souhaitées sont transmises par sa longueur et sa hauteur. 
+Des Exceptions sont levées si l'envahisseur est placé hors de l'espace de jeu ou si il dépasse de celui ci de par ses dimensions.
+ 
+- Story 2 : Déplacer un envahisseur vers la gauche de façon autonome sans sortir de l'espace de jeu  
+L'envahisseur doit être capable de se déplacer automatiquement vers la gauche à une vitesse donnée sans sortir de l'espace de jeu
+
+- Story 3 : Déplacer un envahisseur vers la droite de façon autonome sans sortir de l'espace de jeu  
+L'envahisseur doit être capable de se déplacer automatiquement vers la droite à une vitesse donnée sans sortir de l'espace de jeu
+
+- Story 4 : Changer de direction   
+Si l'envahisseur atteint le bord de l'espace de jeu, il doit changer de direction
+
+#### Spike : Prise en main et intégration d'un moteur graphique
+
+- Adaptation du moteur graphique à la nouvelle fonctionnalité
+
+### Fonctionnalité en cours d'implémentation 
+
+Aucune
+
+### Diagramme de classes 
+
+
+![Diagrammes de classes de la semaine 5](Rapports/ImagesS5/ClassDiagramS5.png)
+
+
+
+### Nuage de mots 
+
+
+![Nuage de mots de la semaine 5](Rapports/ImagesS5/WordCloudS5.png)
+
+
+
+### Difficultés rencontrées 
+Aucune
+
+### Remarques diverses
+
+Pour le moment : pas d'interaction entre les différents Sprites.
+Modifications pour généraliser le comportement des sprites : le positionnement d'un vaisseau ou d'un envahisseur se fait de la même façon.
+
+-------------  
 
 ## Glossaire <a id="glossaire"></a>
 
