@@ -296,14 +296,14 @@ On prend ici en compte les collisions verticales et horizontales.
 ### Diagramme de classes 
 
 
-![Diagrammes de classes de la semaine 6](Rapports/ImagesS3/ClassDiagramS6.png)
+![Diagrammes de classes de la semaine 6](Rapports/Images6/ClassDiagramS6.png)
 
 
 
 ### Nuage de mots 
 
 
-![Nuage de mots de la semaine 6](Rapports/ImagesS3/WordCloudS6.png)
+![Nuage de mots de la semaine 6](Rapports/ImagesS6/WordCloudS6.png)
 
 
 
