@@ -5,6 +5,7 @@
 - [Semaine n°3 : du 13 au 19 avril](#semaine3)  
 - [Semaine n°4 : du 27 avril au 3 mai](#semaine4)  
 - [Semaine n°5 : du 4 au 10 mai](#semaine5) 
+- [Semaine n°6 : du 11 au 17 mai](#semaine6) 
 - [Glossaire](#glossaire)
 
 -------------
@@ -269,6 +270,53 @@ Modifications pour généraliser le comportement des sprites : le positionnement
 
 -------------  
 
+## Semaine n°6 : du 11 au 17 avril <a id="semaine6"></a>
+
+
+### Sprints et fonctionnalités réalisées 
+
+
+#### Fonctionnalité n°6 : Détecter une collision entre deux sprites 
+
+- Story n°1 : Gérer une colision frontale  (fait)  
+Si un sprite se superpose à un autre du bas vers le haut ou inversement, le système de collision le détecte et renvoie un message adapté.
+Pour le moment, on ne prend en compte que les ordonnées des sprites.
+ 
+
+### Fonctionnalité n°6 en cours d'implémentation 
+
+- Story n°2 : Gérer une collision latérale  
+Si un sprite se superpose à un autre de la gauche vers la droite ou inversement, le système de collision le détecte et renvoie un message adapté.
+Pour le moment, on ne prend en compte que les ordonnées des sprites.
+
+- Story n°3 : Gérer une collision complète
+Si un sprite se superpose à un autre, peu importe la direction, le système de collision le détecte et renvoie un message adapté.
+On prend ici en compte les collisions verticales et horizontales.
+
+### Diagramme de classes 
+
+
+![Diagrammes de classes de la semaine 6](Rapports/ImagesS6/ClassDiagramS6.png)
+
+
+
+### Nuage de mots 
+
+
+![Nuage de mots de la semaine 6](Rapports/ImagesS6/WordCloudS6.png)
+
+
+
+### Difficultés rencontrées 
+
+Petite remise au point sur le système de coordonnées, abscisses et ordonnées sur l'espace de jeu.
+
+### Remarques diverses
+
+Aucune
+
+-------------
+
 ## Glossaire <a id="glossaire"></a>
 
 * **Vaisseau** :  véhicule commandé par le joueur, pouvant se déplacer de droite à gauche et ayant la possibilité de lancer des missiles destinés à détruire le(s) envahisseurs. Il possède une **Position** et une **Dimension**.
@@ -282,5 +330,7 @@ Modifications pour généraliser le comportement des sprites : le positionnement
 * **Position** : caractéristique du vaisseau qui défini sa position en 2D grâce à une abscisse et une ordonnée.
 
 * **Sprite** : un élément graphique qui peut se déplacer sur l'écran. Par exemple : un vaisseau ou un missile sont des sprites.
+
+* **Collision** : superposition partielle ou totale de deux sprites sur un même plan à un moment donné.
 
 ------------- 
