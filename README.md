@@ -331,6 +331,6 @@ Aucune
 
 * **Sprite** : un élément graphique qui peut se déplacer sur l'écran. Par exemple : un vaisseau ou un missile sont des sprites.
 
-* **Collision** : superposition de deux sprites sur un même plan à un moment donné.
+* **Collision** : superposition partielle ou totale de deux sprites sur un même plan à un moment donné.
 
 ------------- 
