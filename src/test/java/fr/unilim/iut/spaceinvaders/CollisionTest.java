@@ -48,9 +48,9 @@ public class CollisionTest {
 		assertEquals(true, collision.detecterCollision(spaceinvaders.recupererMissile(), spaceinvaders.recupererEnvahisseur()));
 		
 	}
-	/*
+	
 	@Test
-	   public void test_Traitement_De_Colision_FrontaleHautBas() {
+	   public void test_Traitement_De_Colision_Latérale() {
 		spaceinvaders.positionnerUnNouveauSprite(new Dimension(3,2),new Position(5,9), 1, "Vaisseau");
 		spaceinvaders.positionnerUnNouveauSprite(new Dimension(3,2),new Position(7,2), 1, "Envahisseur");
 		
@@ -58,8 +58,8 @@ public class CollisionTest {
 		/* Représentation de la situation
 		 * 
 		 *	"...............\n" + 
-		 *	"...............\n" +
-		 *	"...............\n" + 
+		 *	"...VVV....EEE...\n" +
+		 *	"...VVV....EEE..\n" + 
 		 *	"...............\n" + 
 	     *	"...............\n" + 
 	     *	"...............\n" + 
@@ -69,8 +69,11 @@ public class CollisionTest {
 	     *	"...............\n"		
 	     */
 		
+		spaceinvaders.deplacerSpriteVersLaDroite(spaceinvaders.recupererVaisseau());
+		spaceinvaders.deplacerSpriteVersLaDroite(spaceinvaders.recupererVaisseau());
 		
-		//assertEquals(true, collision.detecterCollision(spaceinvaders.recupererMissile(), spaceinvaders.recupererEnvahisseur()));
 		
-	//}
+		assertEquals(true, collision.detecterCollision(spaceinvaders.recupererVaisseau(), spaceinvaders.recupererEnvahisseur()));
+		
+	}
 }
