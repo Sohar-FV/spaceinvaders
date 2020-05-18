@@ -296,7 +296,7 @@ On prend ici en compte les collisions verticales et horizontales.
 ### Diagramme de classes 
 
 
-![Diagrammes de classes de la semaine 6](Rapports/Images6/ClassDiagramS6.png)
+![Diagrammes de classes de la semaine 6](Rapports/ImagesS6/ClassDiagramS6.png)
 
 
 
