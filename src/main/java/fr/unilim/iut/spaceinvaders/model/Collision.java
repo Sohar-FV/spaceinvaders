@@ -5,20 +5,32 @@ public class Collision {
 	public boolean detecterCollision(Sprite sprite1, Sprite sprite2) {
 		
 		
-		//Détecter une collision frontale ( de bas en haut )		
-		if (sprite1.ordonneeLaPlusBasse() <= sprite2.ordonneeLaPlusHaute() && sprite1.ordonneeLaPlusBasse() >= sprite2.ordonneeLaPlusBasse()) {
-			return true;
-			
-		}	
-		if (sprite1.abscisseLaPlusAGauche() <= sprite2.abscisseLaPlusADroite() && sprite1.abscisseLaPlusADroite() >= sprite2.abscisseLaPlusAGauche()) {
-			return true;
+		 	
+		boolean bool = false;
 		
-		}	
-		return false;
+		
+		//Condition de collision verticale (obligatoire dans tous les cas)
+		if (sprite1.ordonneeLaPlusBasse() <= sprite2.ordonneeLaPlusHaute() && sprite1.ordonneeLaPlusHaute() >= sprite2.ordonneeLaPlusBasse()) {
+			
+			//Collision frontale
+			if(sprite1.abscisseLaPlusAGauche() >= sprite2.abscisseLaPlusAGauche() && sprite1.abscisseLaPlusADroite() <= sprite2.abscisseLaPlusADroite()) { 
+				return true;
+			}
+			
+			//Collision latérale gauche 
+			if(sprite1.abscisseLaPlusAGauche() >= sprite2.abscisseLaPlusAGauche()-(sprite1.longueur()-1) && sprite1.abscisseLaPlusADroite() <= sprite2.abscisseLaPlusADroite()) { 
+				return true;
+				}
+			
+			//Collision latérale droite
+			if(sprite1.abscisseLaPlusAGauche() >= sprite2.abscisseLaPlusAGauche() && sprite1.abscisseLaPlusADroite()-(sprite1.longueur()-1) <= sprite2.abscisseLaPlusADroite()) { 
+				return true;
+				}
+		}
+		return bool;
 	}
 	
-	//à faire : vérifier l'abscisse en cas de collision frontale (éviter de déclarer une collision en cas de tir à coté)
-	//Traiter les colisions latérales 
-	//Vérifier qu'il n'y a pas d'autres types de collisions à traiter
-
+	
+	
+	
 }

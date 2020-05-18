@@ -120,7 +120,7 @@ public class SpaceInvaders implements Jeu {
 	//Gestion des déplacements et actions
 	public void deplacerSpriteVersLaDroite(Sprite sprite) {
 		if (sprite.abscisseLaPlusADroite() < (longueur - 1)) {
-			sprite.deplacerHorizontalementVers(Direction.DROITE);;
+			sprite.deplacerHorizontalementVers(Direction.DROITE);
 			if (!estDansEspaceJeu(sprite.abscisseLaPlusADroite(), sprite.ordonneeLaPlusHaute())) {
 				sprite.positionner(longueur - sprite.longueur(), sprite.ordonneeLaPlusHaute());
 			}
@@ -150,25 +150,6 @@ public class SpaceInvaders implements Jeu {
 		}
 		
 	}
-	/*
-	public void deplacerEnvahisseurVersLaGauche() {
-		if (0 < envahisseur.abscisseLaPlusAGauche())
-			envahisseur.deplacerHorizontalementVers(Direction.GAUCHE);
-		if (!estDansEspaceJeu(envahisseur.abscisseLaPlusAGauche(), envahisseur.ordonneeLaPlusHaute())) {
-			envahisseur.positionner(0, envahisseur.ordonneeLaPlusHaute());
-		}
-	}
-	
-	public void deplacerEnvahisseurVersLaDroite() {
-		if (envahisseur.abscisseLaPlusADroite() < (longueur - 1)) {
-			envahisseur.deplacerHorizontalementVers(Direction.DROITE);
-			if (!estDansEspaceJeu(envahisseur.abscisseLaPlusADroite(), envahisseur.ordonneeLaPlusHaute())) {
-				envahisseur.positionner(longueur - envahisseur.longueur(), envahisseur.ordonneeLaPlusHaute());
-			}
-		}
-	}
-	*/
-	
 	
 	
 	//Gestion du jeu et du moteur graphique
