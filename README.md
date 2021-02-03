@@ -2,7 +2,7 @@
 
 -------------
 
-Réalisé dans le cadre du module [], ce projet s'étalant sur plusieurs semaines est une initiation au Test Driven Development (TDD) et à l'application de bonnes pratiques dans le développement.
+*Réalisé dans le cadre du module Conception Orientée Objet de mon DUT, ce projet s'étalant sur plusieurs semaines était une initiation au Test Driven Development (TDD) et à l'application de bonnes pratiques dans le développement.*
 
 -------------
 
