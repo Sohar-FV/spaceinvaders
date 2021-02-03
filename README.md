@@ -1,5 +1,11 @@
 # spaceinvaders
 
+-------------
+
+Réalisé dans le cadre du module [], ce projet s'étalant sur plusieurs semaines est une initiation au Test Driven Development (TDD) et à l'application de bonnes pratiques dans le développement.
+
+-------------
+
 - [Semaine n°1 : du 30 mars au 5 avril](#semaine1)  
 - [Semaine n°2 : du 6 au 12 avril](#semaine2)  
 - [Semaine n°3 : du 13 au 19 avril](#semaine3)  
